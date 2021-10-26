@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Form1
+{
+    class Bicycle : Vehicle
+    {
+        public bool Engine { get; set; }
+
+        public Bicycle(int prise, int maxspeed, int year,
+            int amountOfSeats, int amountOfDoors, bool engine)
+            : base(prise, maxspeed, year, amountOfSeats, amountOfDoors)
+        {
+            Engine = engine;
+        }
+
+        public override string getVehicleConfig()
+        {
+            string config = "Bicycle info: " + base.getVehicleConfig() + ",Engine: " + Engine;
+            return config;
+        }
+
+    }
+}

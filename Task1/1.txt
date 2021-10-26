@@ -1,0 +1,6 @@
+Car info: price: 10,maxSpeed: 10,year: 10,ammountOfSeats: 10,ammountOfDoors: 10,Roof: False
+Lorry info: price: 10,maxSpeed: 10,year: 10,ammountOfSeats: 15,ammountOfDoors: 10,maxLoad: 500
+Car info: price: 10,maxSpeed: 10,year: 12,ammountOfSeats: 10,ammountOfDoors: 10,Roof: False
+Car info: price: 10,maxSpeed: 10,year: 13,ammountOfSeats: 10,ammountOfDoors: 10,Roof: False
+Bicycle info: price: 10,maxSpeed: 10,year: 14,ammountOfSeats: 10,ammountOfDoors: 10,Engine: True
+
