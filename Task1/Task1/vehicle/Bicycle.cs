@@ -8,6 +8,7 @@ namespace Form1
 {
     class Bicycle : Vehicle
     {
+        //мотор
         public bool Engine { get; set; }
 
         public Bicycle(int prise, int maxspeed, int year,
@@ -17,6 +18,7 @@ namespace Form1
             Engine = engine;
         }
 
+        //переопределение виртуального метода родителя
         public override string getVehicleConfig()
         {
             string config = "Bicycle info: " + base.getVehicleConfig() + ",Engine: " + Engine;

@@ -8,6 +8,7 @@ namespace Form1
 {
     class Car : Vehicle
     {
+        //крыша
         public bool Roof { get; set; }
 
         public Car(
@@ -18,6 +19,7 @@ namespace Form1
             Roof = roof;
         }
 
+        //переопределение виртуального метода родителя
         public override string getVehicleConfig()
         {
             string config = "Car info: " + base.getVehicleConfig() + ",Roof: " + Roof;

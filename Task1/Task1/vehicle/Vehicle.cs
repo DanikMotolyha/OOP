@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace Form1
 {
+    /*
+     * Абстрактный базовый класс
+     */
     abstract class Vehicle
     {
-
+        // цена транспортного средства
         private int price;
+        // максимальная скорость
         private int maxSpeed;
+        // год выпуска
         private int year;
+        // количество сидений
         private int amountOfSeats;
+        // количество дверей
         private int amountOfDoors;
 
         protected Vehicle(

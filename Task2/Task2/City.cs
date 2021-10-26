@@ -10,15 +10,19 @@ namespace ConsoleApp1
 {
     enum County { BELARUS, RUSSIA, LILHUANIA };
 
-
     [Serializable]
     class City
     {
 
+        //название города
         private string name;
+        //дата основания
         private DateTime date;
+        //площадь
         private int square;
+        //население
         private int population;
+        //страна
         private County country;
 
         public City(string name, DateTime date, int square, int population, County country)
@@ -30,6 +34,7 @@ namespace ConsoleApp1
             this.country = country;
         }
 
+        //метод записи в файл( по умолчанию data.txt)
         public void writeToFile(string fileName = "data.txt") {
             using (StreamWriter sw = new StreamWriter(fileName, false, System.Text.Encoding.Default))
             {
@@ -37,6 +42,8 @@ namespace ConsoleApp1
             }
         }
 
+
+        //метод простейшего парсинга из файла( по умолчанию data.txt)
         public static City parseFromFile(string fileName = "data.txt") {
             using (StreamReader sr = new StreamReader(fileName, System.Text.Encoding.Default))
             {
@@ -61,6 +68,9 @@ namespace ConsoleApp1
             city = new City(cityName, cityDate, citySquare, cityPopulation, cityCountry);
             return city;
         }
+
+
+        //сериализация( по умолчанию data.dat)
         public void serialize(string fileName = "default.dat") {
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
@@ -68,6 +78,8 @@ namespace ConsoleApp1
                 formatter.Serialize(fs, this);
             }
         }
+        
+        //десериализация( по умолчанию data.dat)
         public static City deserialize(string fileName = "default.dat")
         {
             City city = null;
@@ -78,10 +90,12 @@ namespace ConsoleApp1
             }
             return city;
         }
+        //метод, преобразовывающий объект в строку
         public override string ToString()
         {
             return name + " " + date.ToShortDateString() + " " + square + " " + population +  " " + country;
         }
+        //метод, преобразовывающий объект в строку с хэш-кодами
         public string ToStringWithHash()
         {
             return "name: " + name + ",hash: " + name.GetHashCode() + "\r\n"
